@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DGXA · Suivi des jeunes</title>
+<style>body{font-family:system-ui,sans-serif;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center}a{color:#fff}</style>
+<script>
+// L'appli a déménagé : on redirige en gardant le lien du joueur (#j=CODE) ou son code enregistré.
+var NEW="https://dgxa-agency.github.io/dgxa-suivi/",h=location.hash;
+if(!h){try{var L=JSON.parse(localStorage.getItem("dgxa-v2")||"{}");if(L.code&&L.mode!=="agency")h="#j="+L.code}catch(e){}}
+try{if(navigator.serviceWorker)navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.unregister()})})}catch(e){}
+location.replace(NEW+location.search+h);
+</script></head>
+<body><p>L’appli DGXA a une nouvelle adresse.<br><br><a href="https://dgxa-agency.github.io/dgxa-suivi/">Ouvrir l’appli →</a></p></body></html>
